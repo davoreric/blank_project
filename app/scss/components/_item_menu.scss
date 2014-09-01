@@ -1,0 +1,15 @@
+.item_menu {
+
+	position: relative;
+
+	&.active ul { display: block; @include animation(fancy_enter 0.2s ease-in); z-index: 30; }
+
+	.toggle_btn { position: absolute; right: 0.3em; top: 0; padding: 1em;  }
+	.toggle_btn:before { font-size: em(15,12); }
+	&.active .toggle_btn { z-index: 40; }
+
+	ul { position: absolute; top: 0; left: 0; right: 0; border-radius: 1.8em; border: 1px solid rgba(#000, 0.2); padding-top: 3.2em; display: none; background-color: #fff; }
+	li { border-top: 1px solid rgba(#000,0.2); }
+	li a { display: block; font-size: em(15,12); padding: 0.5em 1em; }
+
+}

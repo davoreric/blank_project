@@ -1,0 +1,13 @@
+.rangeslider		{ position: relative; padding: em(17,12) 0 em(27,12); @include user-select(none); }
+.rangeslider input	{ display: none; }
+.rs_track			{ position: relative; height: 1px; background-color: #706f6f; margin: 0 0.4em; }
+.rs_track:before,
+.rs_track:after		{ content: ""; position: absolute; top: 0; margin-top: em(-3,12); border: em(4,12) solid #706f6f; border-radius: 50%; }
+.rs_track:after		{ left: -0.4em; }
+.rs_track:before	{ right: -0.4em; }
+.rs_handle			{ position: absolute; left: 0; top: 0; z-index: 10; margin: em(-12, 12) 0 0 em(-12, 12); width: em(24,12); height: em(24,12); border-radius: 50%; background-color: $c_main_01; box-shadow: 0 0.1em 0.2em rgba(#000, 0.2); cursor: pointer; }
+.rs_handle:before 	{ @include default-icon-font(gesund_icons); content:"\e62a"; position: absolute; left: 0; top: 0; font-size: 1em; width: em(24,12); line-height: em(24,12); text-align: center; color: #fff;  }
+.rs_handle_label	{ position: absolute; bottom: 100%; right: 0; background-color: #fff; padding: 0.3em 0.5em; font-size: em(11,12); color: $c_main_01; border: 1px solid $c_main_01; border-radius: 0.2em; text-transform: uppercase; }
+.rs_endpoint		{ position: absolute; bottom: 0; font-size: em(10,12); text-transform: uppercase; }
+.rs_endpoint.rs_min	{ left: 0; text-align: left; }
+.rs_endpoint.rs_max	{ right: 0; text-align: right; }

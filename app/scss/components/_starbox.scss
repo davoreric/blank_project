@@ -1,0 +1,17 @@
+.starbox {
+
+	position: relative; display: inline-block; overflow: hidden;
+
+	.rate_star							{ display: block; float: left; position: relative; height: em(26,12); width: em(22,12); text-indent: -9999px; overflow: hidden; @include transition_transform(200); @include user-select(none); }
+	.rate_star:before					{ @include default-icon-font(gesund_icons);  content:"\e606"; font-size: em(20,12); width: em(30,20); height: em(30,20); position: absolute; top: 50%; left: 50%; margin-top: em(-15,20); margin-left: em(-15,20); text-indent: 0; text-align: center; line-height: em(30,20); color: $c_main_01; }
+	.rate_star.selected:before,
+	.rate_star.hovered:before			{ content:"\e607"; }
+	input								{ display: none; }
+	.text_label 						{ display: none; }
+
+	&.active .rate_star.selected:before	{ content:"\e606"; }
+	&.active .rate_star.hovered:before	{ content:"\e607"; }
+
+	.rate_star.clicked					{ @include transform( rotate(45deg) scale3d(0.8, 0.8, 0.8) ); }
+
+}

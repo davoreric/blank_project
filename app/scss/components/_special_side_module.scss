@@ -1,0 +1,109 @@
+/********************************************************************/
+/* SPECIAL SIDE MODULE **********************************************/
+/********************************************************************/
+
+.special_side_module {
+
+	margin-bottom: 2em;
+
+	.head_01 {
+
+		margin: 0;
+
+	}
+
+	.intro {		
+		
+		display: block;
+
+		img {
+
+			display: block; width: 100%;
+
+		}
+		
+		.title {
+
+			padding: em(6,22) em(12,22); display: block; background: $c_main_02;
+			font-size: em(22,12); font-weight: 300; line-height: em(25,22); text-shadow: 0 1px 0 rgba(255,255,255,.8);
+			
+			strong {
+
+				display: block;
+				font-weight: 600; color: $c_gray_02;
+
+			}
+
+		}
+
+	}
+
+	.wrap {
+
+		background: tint($c_main_01, 90%); padding: 0.1px;
+
+	}
+
+	.box {
+
+		margin: 1em 1em 2em;
+
+	}
+
+	.link {
+		
+		display: block; overflow: hidden;
+		color: $c_gray_02;
+
+		&:hover h4 {
+
+			color: $c_main_01;
+
+		}
+
+	}
+
+	.img { 
+	
+		float: left; border: 1px solid $c_gray_05; margin-right: .7em;
+
+	}
+	
+	.data {
+
+		overflow: hidden;
+
+		h4 {
+
+			font-size: em(16,12); font-weight: 400;
+		}
+
+	}
+	
+	.btn_area {
+
+		text-align: center; margin-bottom: 2em;
+
+	}
+
+	/* large tablet */
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		margin-bottom: 1em;
+
+		.box {
+
+			margin: 1em;
+
+		}
+
+		.btn_area {
+
+			margin-bottom: 1em;
+
+		}
+
+	}
+
+
+}

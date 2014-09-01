@@ -1,0 +1,89 @@
+/********************************************************************/
+/* META INTERACTIONS ************************************************/
+/********************************************************************/
+
+.meta_interactions {
+
+	font-size: em(11,12); line-height: em(28,11); color: $c_gray_03; text-transform: uppercase; padding: em(14,11) 0;
+
+	.toggle { display: none; }
+
+	.social {
+		
+		float: left;
+		
+		a { font-size: em(21,11); line-height: em(28,21); margin-left: em(10,21); vertical-align: middle; }
+		
+		.fb_icon_circle {
+			color: $c_icon_fb;
+			&:hover { color: darken($c_icon_fb,15%); }
+		}
+
+		.tw_icon_circle {
+			color: $c_icon_tw;
+			&:hover { color: darken($c_icon_tw,15%); }
+		}
+
+		.gp_icon_circle {
+			color: $c_icon_gp;
+			&:hover { color: darken($c_icon_gp,15%); }
+		}
+
+	}
+
+	.accses {
+		float: right; margin-right: em(12,11);
+		a {
+			color: lighten($c_gray_03,15%); margin-left: em(6,20); float: left;
+			&.active { color: darken($c_gray_03,15%); }
+			&:hover { color: $c_gray_02; }
+		}
+		.small:before { font-size: em(10,11); line-height: em(24,10); padding-top: 4px; }
+		.medium:before { font-size: em(13,11); line-height: em(27,13); padding-top: 1px; }
+		.large:before { font-size: em(16,11); line-height: em(28,16); }
+	}
+
+	.interact {
+		
+		float: right;
+
+		a {
+			color: $c_gray_03; margin-left: em(24,20); float: left;
+			&:hover { color: $c_gray_02; }
+		}
+		
+		.mail:before { font-size: em(18,11); line-height: em(28,18); }
+		.print:before { font-size: em(18,11); line-height: em(28,18); }
+		
+		.fav {
+			padding-right: em(24,11);
+			&:before { font-size: em(18,11); line-height: em(28,18); left: auto; right: 0; }
+		}
+
+	}
+
+	@media screen and (max-width: $breakpoint_micro_smaller) {
+
+		position: relative;
+
+		.toggle {
+			display: block; float: right;
+			&:before { font-size: em(21,11); line-height: em(28,21); color: lighten($c_gray_03,15%); cursor: pointer; }
+		}
+
+		.drop {
+			display: none; position: absolute; z-index: 50; top: em(56,11); right: 0; border: 1px solid rgba(#000, 0.2); background-color: #fff;
+			&.active { display: block; @include animation(fancy_enter 0.2s ease-in); }
+			section { float: none; margin: 0; }
+			.accses { border-top: 1px solid rgba(#000, 0.2); }
+			a {
+				text-indent: 0; padding: em(5,12) em(10,12); font-size: em(12,11); display: block; float: none; margin: 0; border-top: 1px solid rgba(#000, 0.2);
+				&:first-child { border: 0; }
+				&:before { display: none; }
+				span { display: block; }
+			}
+		}
+
+	}
+
+}

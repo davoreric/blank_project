@@ -1,0 +1,80 @@
+/********************************************************************/
+/* SWIPE SLIDER ***************************************************/
+/********************************************************************/
+
+@mixin slider_dots {
+
+	.slider_dots { position: absolute; right: 0; bottom: -3em; left: 0; text-align: center; }
+	.slider_dots .dot_wrap { display: inline-block; width: 1em; height: 1em; background: lighten($c_gray_04,20%); @include border-radius(50%); text-indent: -9999px; margin: 1em .5em; }
+	.slider_dots .dot_wrap:hover,
+	.slider_dots .dot_wrap.active { background: lighten($c_gray_04,5%); }
+	
+}
+
+.swipe_slider {
+
+	position: relative;
+
+	.slide_wrap { position: relative; overflow: hidden; margin-bottom: 3em; }
+	.track { position: relative; overflow: hidden; }
+	.view { display: block; position: relative; float: left; width: 100%; overflow: hidden; }
+
+	.anzeige { left: 0; top: 0; }
+
+	&.type_01 {
+
+		.slide_wrap { border: 1px solid $c_bord_1; }
+
+		.view a,
+		.slide_img img { display: block; }
+		.slide_img img { width: 100%; }
+		
+		.slide_content { position: absolute; right: 0; bottom: 0; left: 0; }
+		.slide_content h2 { font-size: em(30,12); font-weight: $f_weight_normal; line-height: 1.2; color: $c_gray_2; padding: em(12,30); background: rgba($c_main_02,0.8); margin-right: 25%; }
+		.slide_content p { font-size: em(14,12); color: $c_gray_3; padding: em(12,14); background: rgba(255,255,255,.8); }
+
+		@media screen and (max-width: $breakpoint_micro_smaller) {
+
+			.slide_content h2 { font-size: em(20,12); padding: em(5,20); margin-right: 15%; }
+			.slide_content p { display: none; }		
+			
+		}
+
+	}
+
+	&.type_02 {
+
+		margin: 0 -1em;
+
+		.item {
+			
+			a { color: $c_gray_2; margin: 0 1em; display: block; }
+			a:hover { color: $c_main_01; }
+			.img { border: 1px solid $c_bord_1; margin-bottom: em(5,18); }
+			.img img { width: 100%; }
+			h3 { font-size: em(18,12); line-height: 1.3; font-weight: $f_weight_normal; margin-bottom: em(5,18); }
+
+		}
+
+		@media screen and (min-width: $breakpoint_micro_larger) {
+
+			.item { float: left; width: percentage(1/3); }
+
+		}
+
+		@media screen and (max-width: $breakpoint_micro_smaller) {
+
+			a { margin: 0 0 1em; overflow: hidden; }
+			.img { width: em(100,12); margin: 0 em(12,12) 0 0; float: left; }
+			h3 { font-size: em(16,12); margin-bottom: 0; }
+
+		}
+
+	}
+
+
+	@include slider_dots;
+
+	.slider_arrow { display: none; }
+
+}

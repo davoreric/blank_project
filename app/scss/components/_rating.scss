@@ -1,0 +1,17 @@
+.rating {
+
+	position: relative; display: inline-block;
+	span { display: none; }
+
+	&:after,
+	&:before { @include default-icon-font(gesund_icons); font-size: em(14,12); text-indent: 0; color: $c_main_01; line-height: em(20,14); letter-spacing: 0.15em; }
+	&:before { content: "\e606\e606\e606\e606\e606"; }
+	&:after { position: absolute; left: 0; top: 0; }
+
+}
+
+.stars_1:after { content: "\e607"; }
+.stars_2:after { content: "\e607\e607"; }
+.stars_3:after { content: "\e607\e607\e607"; }
+.stars_4:after { content: "\e607\e607\e607\e607"; }
+.stars_5:after { content: "\e607\e607\e607\e607\e607"; }

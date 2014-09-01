@@ -1,0 +1,64 @@
+/********************************************************************/
+/* LOGIN PAGE *******************************************************/
+/********************************************************************/
+
+// Framework
+@import 'vendor/bourbon/bourbon';
+@import 'library/all';
+
+.login_wrap {
+
+	padding: 0 2em;
+
+	@media screen and (min-width: $breakpoint_medium_larger) {
+
+		.login_main {
+
+			float: left; width: 100%; margin-right: em(-360,12);
+
+			.login_main_inner { margin-right: em(396,12); }
+
+		}
+
+		.login_sidebar { float: right; width: em(360,12); }
+
+	}
+
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		padding: 0 em(10,12);
+
+	}
+
+}
+
+.login_teaser_title {
+
+	background: url(../images/login_glyph.png?v=2) left 3px no-repeat; padding: 0 0 em(18,32); padding-left: em(78,32); min-height: em(78,32);
+	font-size: em(28,12); line-height: em(32,28); font-weight: 400;
+
+	span { color: $c_main_01; }
+
+	&.no_image { background: none; padding-left: 0; font-size: em(26,12); min-height: 0; }
+
+	@media screen and (max-width: $breakpoint_micro_smaller) {
+
+		padding: 0; margin-bottom: em(12,32); min-height: 0; background: none;
+
+		span { display: block; }
+
+	}
+
+}
+
+.login_teaser_text {
+
+	font-size: em(18,12); line-height: em(24,18); margin-bottom: em(24,18); color: $c_gray_3; min-height: em(129,18);
+
+	@media screen and (max-width: $breakpoint_medium_smaller) {
+
+		min-height: 0;
+
+	}
+
+}

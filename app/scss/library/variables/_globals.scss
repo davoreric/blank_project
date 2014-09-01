@@ -1,0 +1,78 @@
+/* Typo
+*******************************************************/
+$main_font: 'Open Sans', Arial, sans-serif;
+
+$f_weight_light: 300;
+$f_weight_normal: 400;
+$f_weight_bold: 600;
+
+/* Colors
+*******************************************************/
+
+/* main colors */
+$c_main_01: #577700; /* cargo */
+$c_main_02: #deeb00;  /* lime */
+$c_main_03: #6ea343; /* button */
+
+
+/* DEPRACATED START */
+$c_gray_01: #000;
+$c_gray_02: lighten($c_gray_01,19%); /* mostly for titles */
+$c_gray_03: lighten($c_gray_01,60%); /* mostly for subtitles */
+$c_gray_04: lighten($c_gray_01,70%);
+$c_gray_05: lighten($c_gray_01,92%); /* mostly for borders */
+$c_gray_06: lighten($c_gray_01,97%); /* mostly for backgrounds */
+$c_gray_07: #fff;
+
+$c_gray_a: #6e6e6e;
+$c_gray_b: #505050;
+$c_gray_c: #6F6F6F;
+$c_gray_d: #303030;
+/* DEPRACATED END */
+
+
+/* gray colors */
+$c_gray_1: #000;
+$c_gray_2: #303030;
+$c_gray_3: #505050;
+$c_gray_4: #6f6f6f;
+$c_gray_5: #adadad;
+$c_gray_6: #d2d2d2;
+$c_gray_7: #eaeaea;
+$c_gray_8: #f7f7f7;
+$c_gray_9: #fff;
+
+/* input colors */
+$c_input_bord: #bfbfbf;
+$c_input_hover: #9d9d9d;
+$c_input_focus: #c9d2af;
+$c_input_error: #eea08c;
+
+/* separator colors */
+$c_sep_1: tint($c_main_01,50%);
+$c_sep_2: #d6d6d6;
+$c_sep_3: #e8e8e8;
+
+/* border colors */
+$c_bord_1: #e9e9e9;
+
+/* social network colors */
+$c_fb_blue: #3b5998;
+
+$c_icon_fb: #5f77aa;
+$c_icon_tw: #59d3fc;
+$c_icon_gp: #db3c4e;
+
+$c_color_fb: #3b5998;
+$c_color_gp: #d34836;
+
+/* Breakpoints
+*******************************************************/
+$breakpoint_micro_smaller: em(550,16);
+$breakpoint_micro_larger: em(551,16);
+
+$breakpoint_small_smaller: em(650,16);
+$breakpoint_small_larger: em(651,16);
+
+$breakpoint_medium_smaller: em(850,16);
+$breakpoint_medium_larger: em(851,16);

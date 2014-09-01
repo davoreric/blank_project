@@ -1,0 +1,181 @@
+/********************************************************************/
+/* GENERAL INPUTS **************************************************/
+/********************************************************************/
+
+::-ms-clear { display: none; }
+
+/* Standard form styles */
+.std_form {
+
+	.item {
+
+		margin-bottom: 2em;
+
+		.lbl {
+			font-size: em(14,12); font-weight: 400; display: block; padding: 0 em(12,14); margin-bottom: em(5,14); color: $c_gray_03;
+		}
+
+		.i_txt {
+
+			@include box-sizing(border-box);
+			@include border-radius(1.5em);
+
+			font-size: em(15,12); line-height: em(38,15); height: em(38,15); color: lighten($c_gray_02,10%);
+			display: block; width: 100%; border: 1px solid $c_input_bord; padding: em(2,15) em(15,15);
+
+			&:hover {
+				border-color: $c_input_hover;
+			}
+
+			&:focus {
+				border-width: 2px; border-color: $c_input_focus;
+			}
+
+		}
+
+		textarea.i_txt { height: auto; }
+
+		.error.i_txt {
+			border-width: 2px; border-color: $c_input_error;
+		}
+
+		.item_lbl { display: block; color: $c_gray_02; font-size: em(14,12); font-weight: 600; margin: 0.5em 0; }
+
+		&.required { position: relative; }
+		&.required:after { content: "*"; position: absolute; font-size: 1.7em; height: 1em; line-height: 1em; top: 50%; margin-top: -0.35em; right: 0.6em; color: $c_main_01; }
+
+	}
+
+	@media screen and (min-width: $breakpoint_small_larger) {
+
+		.col_wrap {
+			margin: 0 -1em;
+		}
+
+		.column {
+			float: left; width: percentage(1/2);
+			.item { margin: 0 1em 2em; }
+		}
+
+	}
+
+}
+
+/* input with notification inside */
+.i_type_1 {
+
+	position: relative; display: table; width: 100%; @include box-sizing(border-box); border: 1px solid lighten($c_gray_04, 10%); border-radius: 1.6em; background: $c_gray_07;
+
+	input { display: table-cell; font-size: em(15,12); padding: em(7,15) em(12,15); width: 100%; border: none; background: none; color: $c_gray_02; }
+	.label { display: table-cell; font-size: em(11,12); color: $c_gray_02; white-space: nowrap; padding-right: 1.5em; text-align: right; }
+
+	&.active_focus .label { display: none; }
+
+}
+
+.i_type_2 {
+
+	position: relative; border: 1px solid $c_gray_05;
+
+	.search_term { font-size: em(16,12); padding: em(14,16) em(12,16); padding-right: 2.5em; @include box-sizing(border-box); display: block; width: 100%; color: $c_main_01; font-weight: $f_weight_normal; border: 0; background: none; }
+	.btn_submit { @include default-button; position: absolute; right: 0.6em; top: 50%; margin-top: -0.6em; font-size: em(18,12); color: $c_main_01; height: em(18,12); &:hover { color: darken($c_main_01, 20%); } }
+
+}
+
+/* wraper for autocomplete (fast search) */
+.fs_mod {
+
+	position: relative;
+
+	.fs_results { position: absolute; left: 0; right: 0; top: 100%; margin-top: -1px; z-index: 20; overflow: hidden; border: 1px solid lighten($c_gray_04, 10%); border-top: 0; border-radius: 0 0 1.6em 1.6em; }
+	.fs_results .result_item { border-top: 1px solid #f5f5f5; border-bottom: 0; font-size: 1.1em; }
+	.i_type_1 { @include transition(border-radius 0.06s ease-in); }
+	&.fsr_opened .i_type_1 { border-bottom-right-radius: 0 !important; border-bottom-left-radius: 0 !important; }
+
+}
+
+/* newsletter form */
+.form_newsletter {
+
+	.form {
+		position:relative;
+	}
+
+	.form_field {
+		@include border-radius(17px 0 0 17px);
+
+		padding:em(10,12) em(15,12);
+		padding-right:(50 + 15) + px;
+		width:100%;
+		border:1px solid #ccc;
+		color: $c_main_01;
+
+		&::-webkit-input-placeholder { color: $c_main_01; }
+		&:-moz-placeholder           { color: $c_main_01; }
+		&::-moz-placeholder          { color: $c_main_01; }
+		&:-ms-input-placeholder      { color: $c_main_01; }
+	}
+
+	.form_action_submit {
+		position:absolute;
+		right:-50px;
+		top:0;
+		bottom:-1px;
+		width:100px;
+	}
+}
+
+
+/* SKIN SELECT
+*******************************************************/
+.skin_select {
+
+	position: relative; display: inline-block;
+
+	.btn					{ position: relative; display: inline-block; font-size: em(15,12); padding: em(7,15) em(15,15); padding-right: em(50,15); color: $c_gray_02; border: 1px solid $c_input_bord; border-radius: 2em; background-color: #fff; min-width: em(80,15); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+	.btn:before 			{ @include default-icon-font(gesund_icons); content: "\e60c"; position: absolute; right:0; top: 0; bottom: 0; font-size: em(12,15); width: em(35,12); text-align: center; line-height: em(37,12); border-left: 1px solid rgba(#000, 0.2); color: $c_main_01; }
+	select					{ position: absolute; left:0; top:0; width:100%; height:100%; z-index:50; cursor:pointer; opacity:0; filter:alpha(opacity=0); font-size: 1.4em; border: 0; }
+
+
+	&:hover .btn { border-color: $c_input_hover; }
+
+	&.focused .btn { border-width: 2px; border-color: $c_input_focus; padding: em(6,15) em(14,15); padding-right: em(49,15); }
+	&.focused .btn:before { width: em(34,12); line-height: em(35,12); border-color: $c_input_focus; }
+
+	&.block_mod,
+	&.block_mod .btn 		{ display: block }
+
+}
+
+/* SKIN CHECKBOX
+*******************************************************/
+.skin_checkbox {
+
+	display: inline-block; position: relative; font-size: em(12,12); line-height: em(18,12); color: $c_gray_02; padding: em(3,12) 0 em(2,12) em(25,12); margin-left: em(10,12); cursor: pointer;
+
+	&:before		{ content: ""; position: absolute; top: 0.2em; left: 0; width: em(16,12); height: em(16,12); border-radius: 0.2em; border: 1px solid $c_input_bord; background-color: #fff; }
+	&:after			{ @include default-icon-font(gesund_icons); font-size: em(12,12); content: "\e624"; position: absolute; left: 1px; top: 0.4em; width: em(18,12); text-align: center; opacity: 0; @include transition(opacity 0.1s ease-in); }
+
+	&.on:after		{ color: $c_main_01; opacity: 1; }
+	&:hover:before	{ border-color: $c_input_hover; }
+
+	.required 		{ color: $c_main_01; font-size: 1.3em; }
+
+	input			{ position: absolute; left: -9999em; visibility: hidden; }
+}
+
+/* SKIN RADIO
+*******************************************************/
+.skin_radio 		{
+
+	display: inline-block; position: relative; font-size: em(12,12); line-height: em(18,12); color: $c_gray_02; padding: em(3,12) 0 em(2,12) em(25,12); margin-left: em(10,12); cursor: pointer; overflow: hidden;
+
+	&:before		{ content: ""; position: absolute; top: 50%; left: em(1,12); width: em(15,12); height: em(15,12); margin-top: em(-8,12); border-radius: 50%; border: 1px solid $c_input_bord; background-color: #fff; }
+	&:after			{ content: ""; position: absolute; top: 50%; left: em(7,12); width: em(5,12); height: em(5,12); margin-top: em(-2,12); border-radius: 50%; background-color: #fff; @include transition(background-color 0.1s ease-in); }
+
+	&.on:after		{ background-color: $c_main_01; }
+	&:hover:before	{ border-color: $c_input_hover; }
+
+	input			{ position: absolute; left: -9999em; visibility: hidden; }
+
+}

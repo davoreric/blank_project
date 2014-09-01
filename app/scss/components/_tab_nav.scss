@@ -1,0 +1,55 @@
+/********************************************************************/
+/* TAB NAVIGATION ***************************************************/
+/********************************************************************/
+
+.tab_nav {
+
+	margin: 0 -.5em 2em;
+	
+	ul { display: table; width: 100%; }
+	
+	li {
+	
+		display: table-cell; padding: 0 0.5em;
+		
+		a {
+			@include border-radius(.5em);
+			display: block; text-align: center; padding: em(15,15) em(5,15); position: relative;
+			color: $c_gray_03; background: $c_gray_05;
+			font-size: em(15,12); line-height: em(18,15); text-transform: uppercase;
+			&:hover { color: darken($c_gray_03,15%); }
+		}
+
+		&.active a {
+			color: darken($c_gray_03,15%); background: darken($c_gray_05,5%);
+			&:after {
+				@include rotate(45deg);
+				content: ""; position: absolute; width: 14px; height: 14px; left: 50%; bottom: -10px; margin-left: -7px; background: $c_gray_07;
+			}
+		}
+
+	}
+
+	/* tablet variation */
+	@media screen and (max-width: $breakpoint_medium_smaller) {
+
+		li a {
+			font-size: em(12,12); line-height: em(18,12); padding: em(10,12) em(5,12);
+		}	
+
+	}
+
+	/* mobile variation */
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		margin: 0 -.25em 1em;
+
+		li {
+			padding: 0 0.25em; 
+			a {
+				font-size: em(10,12); line-height: em(18,10); padding: em(10,10) em(5,10);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,102 @@
+/********************************************************************/
+/* GESUND COMPASS ***************************************************/
+/********************************************************************/
+
+// Framework
+@import 'vendor/bourbon/bourbon';
+@import 'library/all';
+
+// Components
+@import 'components/filter_pane';
+@import 'components/rangeslider';
+@import 'components/item_menu';
+
+.compass_layout {
+
+	.intro_text { margin-bottom: 2em; }
+
+	.gesund_compass_form { height: auto; clear: both; border: 0; }
+	.gesund_compass_form.bkg_01 { background: url(../images/map_blur_back_3.jpg) bottom right no-repeat; }
+	.gesund_compass_form.bkg_02 { background: url(../images/map_blur_back_4.jpg) bottom right no-repeat; }
+
+	.gesund_compass_form .results_info { clear: both; font-size: em(15,12); font-weight: 400; padding: em(15,15) 0; border-top: 1px solid rgba(lighten(tint($c_main_01, 40%), 20%), 0.6); }
+	.gesund_compass_form .results_info span { color: $c_main_01; }
+
+
+	@media screen and (min-width: $breakpoint_medium_larger) {
+
+		.intro_text { position: relative; margin-bottom: 4em; }
+
+		.gesund_compass_form { padding: 2em 2em 0; }
+		.gesund_compass_form .fs_mod { float: left; width: 38%; margin: 0 4% 3em 0; }
+		.gesund_compass_form .geolocator { margin-right: 0; }
+		.gesund_compass_form .i_type_1 { border-radius: 1.9em; }
+		.gesund_compass_form .i_type_1 input { padding: em(13,15) em(18,15); }
+		.gesund_compass_form .geolocator .i_type_1 .label { padding-right: 5.5em; }
+		.gesund_compass_form .btn_geolocate_me { width: em(50,12); }
+		.gesund_compass_form .btn_geolocate_me:before { font-size: em(23,12); line-height: em(48,23); width: em(51,23); }
+		.gesund_compass_form .notice { left: auto; width: 200%; }
+		.gesund_compass_form .btn_area { float: right; padding: 0; }
+		.gesund_compass_form .btn_area .button_01 { padding: 1.38em 3.5em; border-radius: 1.9em; }
+
+		.gesund_compass_form .results_info { font-size: em(30,12); padding: em(15,30) 0; }
+
+	}
+
+}
+
+.compass_results {
+
+	margin: 2em 0 0; position: relative;
+
+	.filter_btn { display: none; }
+
+	@media screen and (max-width: $breakpoint_medium_smaller) {
+
+		margin: 2em -1em;
+
+		.sort,
+		.sort .btn { display: block; }
+		.sort { margin-left: em(75,12); }
+
+		.controls { margin: 0 1em 1em 1em; }
+		.filter_btn { display: block; float: left; padding: 0.9em 2em; border: 1px solid rgba(#000, 0.2); border-radius: 2em; }
+		.filter_btn:before { font-size: em(15,12); }
+
+		.filter_pane { display: none; z-index: 20; box-shadow: 0 0.6em 0.6em rgba(#000, 0.2); }
+		&.filters_active .filter_pane { position: absolute; width: 100%; display: block; @include animation(fancy_enter 0.3s ease-in); }
+
+	}
+
+	@media screen and (min-width: $breakpoint_medium_larger) {
+
+		.tab_nav { width: 60%; float: left; }
+		.sort { float: right; margin-top: 0.1em; }
+
+		.filter_pane { float: left; width: 30%; margin: 0 0 2em; }
+		.filter_pane:before { content: ""; position: absolute; left: 50%; margin-left: em(-15,12); bottom: 100%; border: em(15,12) solid transparent; border-bottom-color: tint($c_main_01, 90%); }
+		.controls,
+		.compass_results_list,
+		.marker_map_cont { float: right; width: 70%;  @include box-sizing(border-box); padding-left: 2em; }
+		.marker_map_cont .marker_map { left: 2em; }
+
+
+	}
+
+}
+
+.marker_map_cont { position: relative; padding-bottom: 110%; }
+.marker_map { position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
+
+.location_marker { position: relative; padding: 1em; }
+.location_marker:before { color: $c_main_01; font-size: 2.5em; }
+
+.location_info_box					{ background-color: #fff; border: 1px solid $c_main_01; padding: 1.2em 1.5em; box-shadow: 0 2px 5px rgba(#000, 0.3); border-radius: 5px; position: relative; left: 1.0em; top: -3.8em; width: 22em; margin-right: 0.5em; }
+.location_info_box:after			{ content: ""; position: absolute; left: -1.7em; top:1em; width: 0; height:0; border: 0.9em solid transparent; border-right-color: $c_main_01;  }
+
+@media screen and (min-width: $breakpoint_medium_larger) {
+
+	.marker_map_cont { padding-bottom: 51.3%; }
+	.location_info_box { width: 27em; }
+
+}

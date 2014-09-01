@@ -1,0 +1,58 @@
+/********************************************************************/
+/* GESUND COMPASS ***************************************************/
+/********************************************************************/
+
+.gesund_compass_mod {
+
+	border: 1px solid $c_gray_05; margin-bottom: 2em;
+
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		margin-bottom: 1em;
+
+	}
+
+}
+
+.gesund_compass_form {
+
+	padding: em(15,12) em(20,12) 0; background: #f8f7f5 url(../images/map_blur_back.jpg) no-repeat 0 0; background-size: 100%; height: em(245,12);
+
+	.title { font-size: em(22,12); text-align: center; color: lighten($c_gray_02, 20%); font-weight: $f_weight_normal; margin-bottom: 0.8em; }
+	.btn_area { text-align: center; padding: em(20,12) 0; }
+
+	.geolocator { position: relative; margin-top: em(20,12); margin-bottom: em(20,12); }
+	.geolocator .i_type_1 .label { padding-right: 4.5em; }
+	.btn_geolocate_me { position: absolute; right: 0; top: 0; bottom: 0; @include linear-gradient(to bottom, lighten($c_main_03,8%), $c_main_03); border-radius: 50%; @include box-shadow( 0 0.1em 0.2em rgba(#000, 0.2) ); width: 3.2em; text-align: center; }
+	.btn_geolocate_me { @include hover{ @include linear-gradient(to bottom, darken(lighten($c_main_03,8%), 5%), darken($c_main_03, 5%)); } }
+	.btn_geolocate_me:before { color: #fff; font-size: em(18,12); line-height: em(37,18); width: em(39,18); }
+	.notice { font-size: em(11,12); position: absolute; top: 100%; left: 0; right: 0; color: $c_main_01; font-weight: 600; padding: 1em 3.2em 0.9em 0; text-align: right; text-shadow: 0 1px 1px #fff; }
+	.notice:before { position: absolute; font-size: em(25,12); right: 0.4em; top: 0.1em;  }
+	.notice .error { color: red; letter-spacing: -0.018em; display: block; line-height: 1.1; margin-left: -1em;  }
+
+	.fsr_opened .btn_geolocate_me { z-index: 30; }
+
+	.btn_geolocate_me:before { @include transition_transform(500); }
+	.btn_geolocate_me:hover:before { @include transform(rotate(360deg)); }
+
+}
+
+.gesund_compass_info {
+
+	padding: em(10,12) em(30,12) em(20, 12); text-align: center; background: #eaeee9 url(../images/map_blur_back_2.jpg) no-repeat 0 0; background-size: 100%;
+
+	p { font-size: em(22,12); color: $c_main_01; text-shadow: 0 1px 1px #fff; font-weight: 300; margin-bottom: 0.5em; }
+	strong { font-weight: 600; }
+
+}
+
+@media screen and (min-width: $breakpoint_small_larger) and (max-width: $breakpoint_medium_smaller) {
+
+	.side_wrap_right .gesund_compass_mod {
+
+		.gesund_compass_form { height: em(233,12); }
+		.gesund_compass_info { display: none; }
+
+	}
+
+}

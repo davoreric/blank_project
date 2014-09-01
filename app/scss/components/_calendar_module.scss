@@ -1,0 +1,85 @@
+/********************************************************************/
+/* CALENDAR MODUL ***************************************************/
+/********************************************************************/
+
+.calendar_module {
+
+	width: 100%; margin-bottom: 2em;
+
+	input {
+		position: absolute;
+		left: -9999px;
+		visibility: hidden;
+	}
+
+	.simplecal {  
+		
+		background: #fff; overflow: hidden; position: relative;
+
+		.meta { 
+
+			background: $c_main_02; text-align: center; position: relative;
+		
+			.meta_title { 
+				
+				padding: em(12,12) 0; border-bottom: lighten($c_main_02,3%) 1px solid;
+
+				span { margin: 0 em(10,12); color: $c_main_01; font-size: em(18,12); font-weight: 600; }
+			}
+
+			.month_control {
+
+				position: absolute; top: 50%; bottom: 0; width: 14%; height: em(14,12); margin-top: em(-8,14); cursor: pointer; display: inline-block; 
+
+				&:before { @include default-icon-font(gesund_icons); }
+
+				span { display: none; }
+
+				&.prev { 
+					left: 0; 
+					&:before {  content: "\e609"; }
+				}
+
+				&.next { 
+					right: 0;
+					&:before { content: "\e60a"; }
+				}
+			}
+		}
+
+		table {
+
+			border-collapse: collapse; width: 100%; table-layout: fixed;
+
+			thead { 
+
+				background: $c_main_02; color: $c_main_01; font-weight: 300; text-transform: uppercase;
+
+				th { font-weight: 500; padding: em(14,14) 0; }
+
+			}
+
+			tr { display: table-row; vertical-align: middle; }
+
+			td, th { 
+
+				border-collapse: collapse; padding: 0; text-align: center; vertical-align: middle; font-size: em(14,12); font-weight: 400; 
+
+				.simplecal_cell, .simplecal_disabled { 
+
+					display: block; color: $c_gray_02; padding: em(12,14) 0;
+
+					&.has-events { background: tint($c_main_02,50%); }
+
+					&.today { background: $c_main_01; }
+
+					&.active { background: $c_main_02; font-weight: 800; }
+
+				}
+
+				.simplecal_disabled { color: $c_gray_04; }
+			}
+
+		} 
+	}
+}

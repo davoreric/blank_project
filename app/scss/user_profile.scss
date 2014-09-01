@@ -1,0 +1,74 @@
+/********************************************************************/
+/* USER PROFILE *****************************************************/
+/********************************************************************/
+
+// Framework
+@import 'vendor/bourbon/bourbon';
+@import 'library/all';
+
+.user_profile {
+
+	.head {
+
+		margin-bottom: 2em;
+
+		h2 { font-size: em(20,12); font-weight: 300; color: $c_gray_02; margin-bottom: em(5,20); }
+		p { font-size: em(14,12); color: $c_gray_03; margin-bottom: em(24,14); }
+		.fig_left { float: left; margin-right: 1em; border: 1px solid $c_gray_05; }
+
+		@media screen and (max-width: $breakpoint_small_smaller) {
+
+			margin-bottom: 1em;
+			p { margin-bottom: em(12,19); }
+
+		}
+
+		@media screen and (max-width: $breakpoint_micro_smaller) {
+
+			.fig_left {
+				width: 45%;
+				img { width: 100%; }
+			}
+
+		}
+
+	}
+
+	.user_form {
+
+		background: $c_gray_06; padding: 2em 2em 0; border: 1px solid $c_gray_05; margin-bottom: 2em;
+
+		@media screen and (max-width: $breakpoint_small_smaller) {
+
+			padding: 1em 1em 0; margin-bottom: 1em;
+
+		}
+
+	}
+
+	.activity_list {
+
+		margin-bottom: 2em;
+
+		li:nth-child(odd) { background: lighten($c_main_01, 72%); }
+
+		.block { overflow: hidden; padding: 1em; display: block; color: $c_gray_02; }
+		.block:hover h3 { color: $c_main_01; }
+		.img { float: left; margin-right: 1em; }
+		.data {
+			overflow: hidden;
+			time { float: right; font-size: em(10,12); }
+			h3 { font-size: em(16,12); font-weight: 400; margin-bottom: em(6,16); }
+			.rating { margin-top: em(-6,12); display: block; }
+			p { font-size: em(12,12); color: $c_gray_03; }
+		}
+
+		@media screen and (max-width: $breakpoint_small_smaller) {
+
+			margin-bottom: 1em;
+
+		}
+
+	}
+
+}

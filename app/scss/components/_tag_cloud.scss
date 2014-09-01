@@ -1,0 +1,46 @@
+/********************************************************************/
+/* TAG CLOUD ********************************************************/
+/********************************************************************/
+
+.tag_cloud {
+
+	margin-bottom: 2em;
+
+	ul { overflow: hidden; margin: em(-7,12) em(-5,12); }
+	li { float: left; margin: em(7,12) em(5,12); }
+
+	li a {
+		@include border-radius(1.5em);
+		background: $c_main_02; font-size: em(13,12); color: $c_gray_02; padding: .5em 1em; display: block;
+		&:hover { background: darken($c_main_02,8%); }
+	}
+
+	.off_01 { @include opacity(0.9); }
+	.off_02 { @include opacity(0.8); }
+	.off_03 { @include opacity(0.7); }
+	.off_04 { @include opacity(0.6); }
+	.off_05 { @include opacity(0.5); }
+	.off_06 { @include opacity(0.4); }
+	.off_07 { @include opacity(0.3); }
+	.off_08 { @include opacity(0.2); }
+	.off_09 { @include opacity(0.15); }
+
+	@media screen and (max-width: $breakpoint_micro_smaller) {
+		display: none; 
+	}
+
+}
+
+.tags {
+
+	a { display: inline-block; font-size: em(11,12); padding: 0.4em 0.7em; border: em(1,11) solid $c_main_01; border-radius: 2em; color: $c_main_01; margin: 0 0.5em 1em 0; }
+	a:hover { background: tint($c_main_01,90%); }
+	a.active { color: $c_gray_9; border-color: $c_main_01; background: $c_main_01; }
+
+	@media screen and (min-width: $breakpoint_small_larger) {
+
+		a { font-size: em(13,12); padding: 0.5em 1em; }
+
+	}
+
+}

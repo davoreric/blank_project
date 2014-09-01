@@ -1,0 +1,76 @@
+/********************************************************************/
+/* IMG MODAL ********************************************************/
+/********************************************************************/
+
+// Framework
+@import 'vendor/bourbon/bourbon';
+@import 'library/all';
+
+.img_modal_overlay {
+
+	background: rgba(255,255,255,0.5);
+	position: fixed;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+
+}
+
+.img_modal_popup {
+
+	@include opacity(0);
+	@include transition(opacity 0.2s ease-in);
+	@include box-sizing(border-box);
+
+	position: fixed;
+	z-index: 1001;
+	top: 20%;
+	top: 50%;
+	left: 50%;
+	background: rgba(255,255,255,0.85);
+	border: 1px solid $c_bord_1;
+	padding: 1em;
+
+	.close {
+		
+		background: $c_bord_1;
+		@include border-radius(50%);
+		width: 2em; height: 2em;
+		position: absolute; top: -1em; right: -1em;
+
+		&:before {
+			color: $c_main_01;
+			width: 100%;
+			text-align: center;
+			line-height: 1.9em;
+		}
+
+	}
+
+	img {
+
+		display: block;
+
+	}
+
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		width: 100%;
+		margin: 0 !important;
+		top: 0;
+		left: 0;
+		border-width: 1px 0;
+
+		.close { top: 1.5em; right: 1.5em; }
+
+		img {
+
+			width: 100%;
+
+		}
+
+	}
+
+}

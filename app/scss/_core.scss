@@ -1,0 +1,381 @@
+/********************************************************************/
+/* CORE *************************************************************/
+/********************************************************************/
+
+html { font-size: 75%; font-family: $main_font; background-color: $c_gray_07; }
+body { font-size: 1em; }
+
+html,
+body { height: 100%; }
+
+a {
+	&				{ color: $c_main_01; }
+	@include hover	{ color: darken($c_main_01, 20%); }
+}
+
+.cf {
+	@include cf;
+}
+
+hr {
+	background: none; border: 1px solid tint($c_main_01,50%); border-width: 0 0 1px 0; margin: 2em 0;
+}
+
+/********************************************************************/
+/* HEADING TYPO *****************************************************/
+/********************************************************************/
+
+.head_01,
+.head_02 { font-size: em(22,12); line-height: em(32,22); color: $c_main_01; font-weight: $f_weight_light; border: 1px solid tint($c_main_01,50%); border-width: 0 0 1px 0; margin-bottom: em(24,22); padding-bottom: em(5,22); }
+.head_02 { background: $c_main_02; padding: em(10,22) em(48,22) em(10,22) em(14,22); }
+
+.head_03 { font-size: em(30,12); color: $c_main_01; font-weight: $f_weight_bold; margin-bottom: em(12,30); }
+
+.head_04 {
+	margin-bottom: em(12,12); position: relative;
+	font-size: em(12,12); color: $c_gray_04; font-weight: $f_weight_bold; text-transform: uppercase; text-align: center;
+	span { padding: 0 .5em; background: $c_gray_07; position: relative; z-index: 2; }
+	&:after {
+		position: absolute; z-index: 1; left: 0; top: 50%; margin-top: -1px; border-top: 1px solid $c_gray_05; width: 100%; content: " ";
+	}
+}
+
+.head_extra { font-size: em(12,12); line-height: em(36,12); color: $c_gray_4; font-weight: $f_weight_bold; float: right; text-transform: uppercase; }
+.head_extra.icon { padding-left: em(12,12); z-index: 2; }
+.head_extra.icon:before { left: 0; font-size: em(10,12); line-height: em(36,10); }
+
+@media screen and (max-width: $breakpoint_small_smaller) {
+
+	.head_01,
+	.head_02 { margin-bottom: em(12,22); }
+
+	.head_03 { font-size: em(20,12); margin-bottom: em(6,20); }
+
+}
+
+@media screen and (max-width: $breakpoint_micro_smaller) {
+
+	.head_01,
+	.head_02 { font-size: em(18,12); line-height: em(32,18); margin-bottom: em(12,18); padding-bottom: em(5,18); }
+	.head_02 { padding: em(10,18) em(48,18) em(10,18) em(14,18); }
+
+}
+
+/********************************************************************/
+/* GENERAL BUTTONS **************************************************/
+/********************************************************************/
+
+/* button 01 */
+
+.button_01 {
+
+	@include default-button;
+	@include border-radius(1.5em);
+	@include linear-gradient(to bottom, lighten($c_main_03,8%), $c_main_03);
+
+	font-size: 1em; font-weight: 700; color: $c_gray_07; text-transform: uppercase; padding: .5em 2em;
+
+	&:hover { color: $c_gray_07; @include linear-gradient(to bottom, darken(lighten($c_main_03,8%), 5%), darken($c_main_03, 5%)); }
+}
+
+/* button 02 */
+
+.button_02 {
+
+	@include default-button;
+	@include border-radius(1.5em);
+
+	border: 0.2em solid $c_main_02; font-size: 1em; font-weight: 700; color: $c_main_01; text-transform: uppercase; padding: 0.36em 1.8em;
+
+	&:hover { opacity: 0.7; }
+
+}
+
+.button_02.c_01 {
+
+	border-color: $c_main_01;
+
+}
+
+/* button 03 */
+
+.button_03 {
+
+	@include default-button;
+	@include border-radius(1.25em);
+	@include linear-gradient(to bottom, lighten($c_main_03,8%), $c_main_03);
+
+	font-size: 1em; font-weight: 700; color: $c_gray_07; text-transform: uppercase; padding: .8em 2em;
+
+	&:hover { color: $c_gray_07; @include linear-gradient(to bottom, darken(lighten($c_main_03,8%), 5%), darken($c_main_03, 5%)); }
+}
+
+.button_03.fb_type {
+	background: $c_color_fb; font-weight: 400; position: relative; padding-left: 3em;
+	&:hover { background: darken($c_color_fb, 5%); }
+	&:before {
+		@include default-icon-font(gesund_icons);
+		content: "\e617"; font-size: 1.8em;
+		position: absolute; top: 7px; left: 7px;
+	}
+}
+
+.button_03.gp_type {
+	background: $c_color_gp; font-weight: 400; position: relative; padding-left: 3em;
+	&:hover { background: darken($c_color_gp, 5%); }
+	&:before {
+		@include default-icon-font(gesund_icons);
+		content: "\e615"; font-size: 1.8em;
+		position: absolute; top: 8px; left: 9px;
+	}
+}
+
+/********************************************************************/
+/* PAGE WRAPS *******************************************************/
+/********************************************************************/
+
+#page_wrap {
+
+	max-width: 83em; min-width: em(320,12); margin: 0 auto; min-height: 100%;
+
+	@media screen and (min-width: $breakpoint_medium_larger) {
+
+		@include box-shadow(0 0 20px rgba(0, 0, 0, 0.15));
+		.no-boxshadow & { border: 1px solid $c_gray_05; border-width: 0 1px; }
+
+	}
+
+	@media screen and (max-width: $breakpoint_medium_smaller) {
+
+		overflow-x: hidden;
+
+	}
+
+}
+
+#page_wrap_inner {
+
+	position: relative; min-height: 100%;
+
+	@media screen and (max-width: $breakpoint_medium_smaller) {
+
+		.nav_active & { left: em(240,12); }
+		.csstransforms3d & { @include transition_transform(300); }
+		.csstransforms3d.nav_active & { left: auto; @include transform( translate3d(em(240,12), 0, 0)); }
+
+	}
+
+}
+
+.content_wrap {
+
+	padding: 0 2em;
+
+	@media screen and (min-width: $breakpoint_medium_larger) {
+
+		.content_main {
+
+			float: left; width: 100%; margin-right: em(-300,12);
+
+			.content_main_inner { margin-right: em(324,12); }
+
+		}
+
+		.content_sidebar { float: right; width: em(300,12); }
+
+	}
+
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		padding: 0 em(10,12);
+
+	}
+
+}
+
+/* side wraps for responsive situations only active for tablet */
+@media screen and (min-width: $breakpoint_small_larger) and (max-width: $breakpoint_medium_smaller) {
+
+	.side_wrap_right {
+
+		@include cf;
+
+		.col_main {
+
+			float: left; width: 100%; margin-right: em(-300,12);
+
+			.col_main_inner { margin-right: em(324,12); }
+
+		}
+
+		.col_side { float: right; width: em(300,12); }
+
+	}
+
+	.side_wrap_equal {
+
+		@include cf;
+
+		.col_left { float: left; width: 50%; padding-right: 1em; @include box-sizing(border-box); }
+		.col_right { float: left; width: 50%; padding-left: 1em; @include box-sizing(border-box); }
+
+	}
+
+}
+
+/********************************************************************/
+/* GENERAL ELEMENTS *************************************************/
+/********************************************************************/
+
+.fb_activity {
+
+	margin-bottom: 2em; background: $c_gray_06; border: 1px solid $c_gray_05; overflow: hidden;
+
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		margin-bottom: 1em;
+
+	}
+
+}
+
+.reg_login_teaser {
+
+	margin-bottom: 2em; padding-top: 2em; background: $c_gray_06; border: 1px solid $c_gray_05; text-align: center;
+
+	p { font-size: em(16,12); margin-bottom: em(12,16); color: $c_gray_03; }
+	.btn { margin-bottom: 2em; }
+
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		margin-bottom: 1em;
+
+	}
+
+}
+
+.button_center_wrap {
+	text-align: center;
+	.button_01,
+	.button_02,
+	.button_03 { margin: 0 1em 2em; }
+
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		.button_01,
+		.button_02,
+		.button_03 { margin: 0 1em 1em; }
+
+	}
+
+}
+
+.button_right_wrap {
+	text-align: right;
+	.button_01,
+	.button_02,
+	.button_03 { margin: 0 1em 2em; }
+
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		.button_01,
+		.button_02,
+		.button_03 { margin: 0 1em 1em; }
+
+	}
+
+}
+
+.partial_text_block .hidden_block {
+	display: none;
+}
+
+.std_list_02 {
+
+	margin-bottom: 2em;
+
+	li { font-size: em(14,12); margin-bottom: em(12,14); position: relative; padding-left: em(20,14); }
+	li:before { @include border-radius(50%); content: ""; position: absolute; top: .45em; left: 0; width: 9px; height: 9px; background: $c_main_01; }
+
+	a {
+		&				{ color: $c_gray_02; }
+		@include hover	{ color: $c_main_01; }
+	}
+
+}
+
+.head_figure {
+
+	position: relative; margin-bottom: 2em;
+
+	img { width: 100%; }
+
+	.slide_content { position: absolute; bottom: 0; left: 0; background: rgba($c_main_02,0.8); margin-right: 25%;  }
+	.slide_content h2 { font-size: em(30,12); font-weight: 300; line-height: 1.2; color: $c_gray_02; padding: em(12,30); }
+	.slide_content p { font-size: em(14,12); color: lighten($c_gray_02,10%); padding: 0 em(12,14) em(12,14); }
+
+	.branding { display: block; position: absolute; right: 0; top: 0; z-index: 2; }
+
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		margin-bottom: 1em;
+
+	}
+
+	@media screen and (max-width: $breakpoint_micro_smaller) {
+
+		.slide_content { position: static; margin: 0; }
+
+		.branding { width: 30%; max-width: 190px; }
+
+	}
+
+}
+
+.social_connect_module {
+
+	overflow: hidden; margin-bottom: 2em;
+
+	@media screen and (max-width: $breakpoint_small_smaller) {
+
+		.fb_type { margin-bottom: 1em; display: block; }
+		.gp_type { display: block; }
+
+	}
+
+	@media screen and (min-width: $breakpoint_micro_larger) {
+
+		.fb_type { float: left; }
+		.gp_type { float: right; }
+
+		&.type_2 { max-width: 40em; margin: 0 auto 4em; }
+
+	}
+
+}
+
+.anzeige { display: block; background: #fff; color: $c_main_01; text-transform: uppercase; padding: 0 em(6,11); position: absolute; font-size: em(11,12); line-height: em(20,11); text-align: center; }
+
+.message_box {
+
+	position: relative; padding-bottom: 1.5em;
+
+	.info_large { font-size: em(24,12); color: $c_main_01; margin-bottom: 0.1em;  }
+	.info_small { font-size: em(18,12); color: $c_gray_4; margin-bottom: 1em; font-weight: 300; }
+
+	@media screen and (min-width: $breakpoint_micro_larger) {
+
+		.info_large { margin-top: -0.4em; font-size: em(30,12); }
+
+	}
+
+	@media screen and (min-width: $breakpoint_medium_larger) {
+
+		text-align: center;
+
+		.head_01 { text-align: left; }
+
+
+	}
+
+}
