@@ -6,30 +6,29 @@ class front_assets {
 	static $css_files = array();
 
 	static function add_css_vendor( $file, $group = "_core" ){
-
-		global $document_root;
-		self::$css_files[$group][$file] = '<link href="'. $document_root .'app/vendor/'. $file .'" rel="stylesheet" type="text/css" />' . PHP_EOL;
+		
+		self::$css_files[$group][$file] = '<link href="/app/vendor/'. $file .'" rel="stylesheet" type="text/css" />' . PHP_EOL;
 
 	}
 
 	static function add_css( $file, $group = "_core" ){
 
-		global $document_root;
-		self::$css_files[$group][$file] = '<link href="'. $document_root .'app/css/'. $file .'" rel="stylesheet" type="text/css" />' . PHP_EOL;
+		
+		self::$css_files[$group][$file] = '<link href="/app/css/'. $file .'" rel="stylesheet" type="text/css" />' . PHP_EOL;
 
 	}
 
 	static function add_js_vendor( $file, $group = "_core" ){
 
-		global $document_root;
-		self::$js_files[$group][$file] = '<script src="'. $document_root .'app/vendor/'. $file .'"></script>'. PHP_EOL;
+		
+		self::$js_files[$group][$file] = '<script src="/app/vendor/'. $file .'"></script>'. PHP_EOL;
 
 	}
 
 	static function add_js( $file, $group = "_core" ){
 
-		global $document_root;
-		self::$js_files[$group][$file] = '<script src="'. $document_root .'app/js/'. $file .'"></script>'. PHP_EOL;
+		
+		self::$js_files[$group][$file] = '<script src="/app/js/'. $file .'"></script>'. PHP_EOL;
 
 	}
 

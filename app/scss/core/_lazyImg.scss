@@ -1,0 +1,25 @@
+/********************************************************************/
+/* LAZY IMAGES ******************************************************/
+/********************************************************************/
+
+.lazyLoadImage {
+
+    background: #f0efef;
+
+    img {
+
+        @include transform(translateX(0));
+        @include transition (opacity 0.25s ease-in);
+        @include opacity(0);
+
+        position: absolute; top: 0; right: 0; left: 0;
+
+        &.lateImageLoaded {
+
+            @include opacity(1);
+
+        }
+
+    }
+
+}

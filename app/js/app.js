@@ -1,13 +1,38 @@
-app.handlers.misc = {
+/* namespace sanatization */
+var app = app || {};
 
-	init: function(){
+/**********************************
+* JS TINY GENERAL COMPONENTS ******
+***********************************/
 
-	}
+app.component = app.component || {};
+
+
+/* temp for bookables */
+app.component.example = {
+
+    init: function(){
+
+        this.setup();
+
+    },
+
+    setup: function(){
+
+    }
 
 };
 
+
+/**********************************
+* JS init on load *****************
+***********************************/
+
 app.init = (function(){
 
-	app.handlers.misc.init();
+    //plugins init
+    
+    //components init
+	app.component.example.init();
 
 })();

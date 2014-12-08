@@ -1,0 +1,45 @@
+/********************************************************************/
+/* FONT ICONS *******************************************************/
+/********************************************************************/
+
+/* general setup */
+
+@font-face { @include fontFace(exampleName); }
+
+.icon {
+
+	display: inline-block; position: relative;
+
+	&:before {
+
+		@include defaultIconFont(exampleName);
+
+		position: absolute; top: 0; left: 0;
+
+	}
+
+}
+
+.iconRpl {
+
+	display: inline-block;
+
+	span {
+
+		display: none;
+
+	}
+
+	&:before {
+
+		@include defaultIconFont(exampleName);
+
+		display: block;
+
+	}
+
+}
+
+/* icons */
+
+.iconExample:before { content: "\e60d"; }

@@ -1,33 +1,15 @@
 {
-  "name": "Static Project",
+  "name": "Blank Project",
   "version": "0.0.0",
 
   "devDependencies": {
     "respond": "~1.4.2",
+    "jquery-ui": "1.11.2",
     "matchmedia": "~0.1.0",
-    "yepnope": "~1.5.4",
     "modernizr": "~2.7.1",
-    "swipe": "~2.0.0",
-    "jquery-legacy": "jquery#1.10",
-    "jquery": "2.1.0",
-    "normalize.css": "~3.0.0",
-    "repository": "~1.0.0"
+    "normalize.css": "3.0.2",
+    "bourbon": "3.2.3"
   },
-
-  "authors": [
-    "Davor Erić <info@davoreric.com>"
-  ],
-
-  "description": "Static project for jumpstarting static webs",
-  "keywords": [
-    "static",
-    "project",
-    "empty"
-  ],
-
-  "license": "MIT",
-  "homepage": "https://gitlab.trikoder.net/frontend/static-project",
-  "private": true,
 
   "ignore": [
     "**/.*",
